@@ -19,5 +19,5 @@ git checkout -b feature/whatever-you-are-building
 cd ..
 git commit -m "Write Your Commint Message"
 
-
+git add .
 git push -u origin feature/whatever-you-are-building
