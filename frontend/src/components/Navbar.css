@@ -1,0 +1,44 @@
+
+
+/* Top Yellow Bar */
+.top-bar {
+    background-color: var(--color-primary);
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.top-bar .right-links span {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Main Navbar */
+.main-navbar {
+    background-color: var(--color-secondary) !important;
+    padding: 18px 0;
+
+}
+
+.main-navbar .navbar-brand {
+    color: var(--color-accent) !important;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.main-navbar .nav-link {
+    color: var(--color-accent) !important;
+    margin-left: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.main-navbar .nav-link:hover {
+    color: var(--color-primary) !important;
+}
+.navbar-logo{
+    width: 70px;
+}
+.contact-info , .right-links span {
+    
+    font-weight: 700;
+}
