@@ -15,10 +15,14 @@ pnpm install
 git checkout -b feature/whatever-you-are-building
 
 
+
+
 # after doing all work in branch do this:
 cd ..
+git add .
 git commit -m "Write Your Commint Message"
 
+<<<<<<< HEAD
 git add .
 git push -u origin feature/whatever-you-are-building
 
@@ -172,3 +176,7 @@ Sanjeev
 
 Private project – All rights reserved.
 
+=======
+
+git push -u origin feature/whatever-you-are-building
+>>>>>>> 1aa6a09330666441daa2cd15977f8495839a0222
