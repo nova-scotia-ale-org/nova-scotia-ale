@@ -1,0 +1,213 @@
+4 Milestones:
+
+M1 – Foundation
+
+M2 – Core Marketplace (Rooms/Jobs/Rides)
+
+M3 – Admin & Moderation
+
+M4 – Polish & Launch
+
+🟢 MILESTONE 1 – FOUNDATION
+🔹 1. Setup Monorepo Structure
+
+Title: chore: initialize monorepo structure (frontend + backend)
+Label: chore
+Assignee: Tanuj
+Description:
+
+Create frontend folder (Vite + React + TS)
+
+Create backend folder (Node + Express + TS)
+
+Add root README
+
+🔹 2. Setup Frontend Project
+
+Title: chore(frontend): setup Vite + React + TypeScript
+Label: frontend
+Assignee: Sanjeev
+
+🔹 3. Setup Backend Project
+
+Title: chore(backend): setup Express + TypeScript server
+Label: backend
+Assignee: Tanuj
+
+🔹 4. Setup ESLint + Prettier
+
+Title: chore: configure ESLint + Prettier (frontend + backend)
+Label: chore
+
+🔹 5. Setup CI Pipeline
+
+Title: chore: add GitHub Actions for lint + build
+Label: chore
+
+🔹 6. Setup Supabase Project
+
+Title: chore(db): create Supabase project and configure environment
+Label: db
+Assignee: Tanuj
+
+🔹 7. Design Database Schema
+
+Title: feat(db): create users, accommodations, jobs, rides tables
+Label: db
+
+🔹 8. Connect Backend to Supabase
+
+Title: feat(backend): connect Express server to Supabase
+Label: backend
+
+🔹 9. Setup Environment Variables
+
+Title: chore: configure environment variables for frontend and backend
+Label: chore
+
+🟢 MILESTONE 2 – CORE MARKETPLACE
+🔐 Authentication
+🔹 10. Implement Google Login
+
+Title: feat(auth): implement Google OAuth login
+Label: auth
+
+🔹 11. Implement Email OTP Login
+
+Title: feat(auth): implement email OTP authentication
+Label: auth
+
+🔹 12. Create Auth Context (Frontend)
+
+Title: feat(frontend): implement authentication context and session handling
+Label: frontend
+
+🔹 13. Protect Private Routes
+
+Title: feat(frontend): create protected route component
+Label: frontend
+
+🏠 Accommodation Module
+🔹 14. Create Accommodation Form UI
+
+Title: feat(accommodation): create accommodation posting form
+Label: frontend
+
+🔹 15. Create Accommodation APIs
+
+Title: feat(backend): implement CRUD APIs for accommodations
+Label: backend
+
+🔹 16. Create Accommodation Listing Page
+
+Title: feat(accommodation): display accommodation listings
+Label: frontend
+
+🔹 17. Accommodation Details Page
+
+Title: feat(accommodation): create single accommodation details page
+Label: frontend
+
+🔹 18. Edit/Delete Accommodation (Owner Only)
+
+Title: feat(accommodation): implement edit and delete functionality
+Label: backend
+
+💼 Jobs Module
+🔹 19. Create Job Posting Form
+
+Title: feat(jobs): create job posting form
+Label: frontend
+
+🔹 20. Implement Job APIs
+
+Title: feat(backend): implement CRUD APIs for jobs
+Label: backend
+
+🔹 21. Create Job Listing + Details Page
+
+Title: feat(jobs): implement job listing and details view
+Label: frontend
+
+🚗 Rides Module
+🔹 22. Create Ride Posting Form
+
+Title: feat(rides): create ride posting form
+Label: frontend
+
+🔹 23. Implement Ride APIs
+
+Title: feat(backend): implement CRUD APIs for rides
+Label: backend
+
+🔹 24. Ride Listing + Details Page
+
+Title: feat(rides): implement ride listing and details view
+Label: frontend
+
+🟢 MILESTONE 3 – ADMIN SYSTEM
+🔹 25. Create Admin Role System
+
+Title: feat(auth): implement role-based access control (admin/manager/user)
+Label: backend
+
+🔹 26. Create Admin Dashboard UI
+
+Title: feat(admin): create admin dashboard page
+Label: frontend
+
+🔹 27. Manage Users
+
+Title: feat(admin): implement user management APIs
+Label: backend
+
+🔹 28. Approve/Reject Posts
+
+Title: feat(admin): implement post moderation system
+Label: backend
+
+🔹 29. Admin View All Listings
+
+Title: feat(admin): create admin listing management UI
+Label: frontend
+
+🟢 MILESTONE 4 – POLISH & PROFESSIONAL
+🔹 30. Add Search & Filters
+
+Title: feat: implement search and filter functionality
+Label: enhancement
+
+🔹 31. Add Pagination
+
+Title: feat: implement pagination for listings
+Label: enhancement
+
+🔹 32. Add Image Upload (Storage)
+
+Title: feat: integrate Supabase storage for image uploads
+Label: backend
+
+🔹 33. Add Profile Page
+
+Title: feat(user): implement profile page and user posts view
+Label: frontend
+
+🔹 34. Add Report Post Feature
+
+Title: feat: implement report post functionality
+Label: enhancement
+
+🔹 35. Add Toast Notifications + UX Polish
+
+Title: chore(frontend): improve UX with loading states and notifications
+Label: frontend
+
+🔹 36. Deploy Frontend to Vercel
+
+Title: chore: deploy frontend to Vercel
+Label: deployment
+
+🔹 37. Deploy Backend to Render
+
+Title: chore: deploy backend to Render
+Label: deployment

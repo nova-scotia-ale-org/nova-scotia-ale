@@ -1,0 +1,281 @@
+0) Project Setup
+
+Create GitHub Project (Kanban): Backlog / In Progress / Review / Done
+
+Add branch protection for main (require PR, require CI checks, no required approvals)
+
+Add default labels: frontend, backend, db, auth, admin, bug, chore, docs, enhancement
+
+Create issue templates (Feature / Bug / Task)
+
+1) Repo + Tooling (Monorepo)
+
+Create repo folders: frontend/ + backend/ + root README.md
+
+Initialize frontend (Vite + React + TS)
+
+Initialize backend (Node + Express + TS)
+
+Setup pnpm workspace (root) OR keep separate (pick one)
+
+Setup ESLint + Prettier (frontend)
+
+Setup ESLint + Prettier (backend)
+
+Setup environment files: .env.example for both
+
+Add basic scripts (dev/build/test/lint) for both
+
+2) CI/CD (Professional)
+
+GitHub Action: frontend lint + test on PR
+
+GitHub Action: backend lint + test on PR
+
+Add status badges to README
+
+Add conventional commits rule (optional but nice)
+
+3) UI Layout (Match your design)
+
+Create global layout: Navbar + Footer
+
+Create Home page sections (Hero + tabs + cards + testimonials + trending + contact)
+
+Create pages: Accommodation, Jobs, Rides
+
+Create page routing (React Router)
+
+Add global styling system (Bootstrap/Tailwind + your CSS variables)
+
+4) Database + Auth Choice
+
+Create Supabase project (or Neon if you decide later)
+
+Create tables: users, accommodations, jobs, rides
+
+Create storage bucket for images (Supabase Storage)
+
+Setup auth providers: Google OAuth + Email OTP
+
+Setup role column + default role = user
+
+5) Backend Foundation
+
+Setup Express server structure (routes/controllers/middleware)
+
+Add health check endpoint /health
+
+Connect backend to DB (Supabase SDK)
+
+Add request validation (Zod)
+
+Add error handling middleware
+
+Add logging (basic)
+
+6) Authentication in App
+
+Frontend: Auth pages (Login/Signup)
+
+Frontend: Auth context/store (user session)
+
+Frontend: Protected route component
+
+Backend: auth middleware (verify token)
+
+Backend: role middleware (admin/manager checks)
+
+Frontend: Logout + session persistence
+
+7) Users + Profile (MVP)
+
+Create Profile page UI
+
+Save user profile in DB (name, phone optional)
+
+“My Posts” page (shows user’s accommodations/jobs/rides)
+
+Edit profile feature
+
+8) Accommodation Module (MVP)
+
+Accommodation: Create form UI (title/desc/price/location/images)
+
+Accommodation: Image upload (Storage)
+
+Backend: Create accommodation API
+
+Backend: List accommodations API
+
+Backend: Get single accommodation API
+
+Backend: Update accommodation API (owner only)
+
+Backend: Delete accommodation API (owner only)
+
+Frontend: Accommodation listing page
+
+Frontend: Accommodation details page
+
+Frontend: Edit accommodation page
+
+Frontend: Delete accommodation action
+
+9) Jobs Module (MVP)
+
+Jobs: Create form UI
+
+Backend: Create job API
+
+Backend: List jobs API
+
+Backend: Get single job API
+
+Backend: Update job API (owner only)
+
+Backend: Delete job API (owner only)
+
+Frontend: Jobs listing page
+
+Frontend: Job details page
+
+Frontend: Edit job page
+
+Frontend: Delete job action
+
+10) Rides Module (MVP)
+
+Rides: Create form UI (from/to/date/seats/price)
+
+Backend: Create ride API
+
+Backend: List rides API
+
+Backend: Get single ride API
+
+Backend: Update ride API (owner only)
+
+Backend: Delete ride API (owner only)
+
+Frontend: Rides listing page
+
+Frontend: Ride details page
+
+Frontend: Edit ride page
+
+Frontend: Delete ride action
+
+11) Search + Filters (Must-have)
+
+Add search bar (keyword) for each module
+
+Add filters: location, price range, date (rides), etc.
+
+Add sorting: newest, price low-high
+
+Add pagination / infinite scroll
+
+12) Posting Rules + Moderation Flow
+
+Add status: pending/approved/rejected to posts
+
+Default new posts = pending
+
+Show “Pending” badge on user’s posts
+
+Only approved posts appear publicly
+
+13) Admin Dashboard (Core)
+
+Admin Dashboard UI route + layout
+
+Admin: Users list page
+
+Admin: Change user role (user/manager/admin)
+
+Admin: Delete user
+
+Admin: View all posts (accom/jobs/rides)
+
+Admin: Approve/reject posts
+
+Admin: Delete any post
+
+Admin: Audit log (optional)
+
+14) Manager Role (Moderation)
+
+Manager can approve/reject posts
+
+Manager can delete posts (or only reject—your choice)
+
+15) Safety + Trust Features
+
+Report post feature (stores reports table)
+
+Block user (admin)
+
+Basic spam prevention (rate limit create endpoints)
+
+Content guidelines page
+
+16) UX Polish
+
+Loading states + skeletons
+
+Empty states (“No rooms found”)
+
+Toast notifications for success/error
+
+Form validation messages
+
+Responsive checks (mobile/tablet/desktop)
+
+17) Testing (Minimum Professional)
+
+Frontend: unit tests for key components
+
+Frontend: router rendering tests
+
+Backend: API route tests (basic)
+
+Add test coverage minimum (optional)
+
+18) Deployment
+
+Deploy frontend to Vercel (env vars setup)
+
+Deploy backend to Render (env vars setup)
+
+Setup CORS correctly
+
+Add production health checks
+
+Verify DB migrations / tables correct
+
+19) Launch Checklist
+
+Add Privacy Policy + Terms of Use
+
+Add Contact form (sends email or stores in DB)
+
+Setup custom domain (later)
+
+Add SEO meta tags + OpenGraph
+
+Create release notes v1.0
+
+20) Post-Launch (Future)
+
+Favorites/save posts
+
+Notifications (email)
+
+Messaging/chat
+
+Reviews/ratings
+
+Ride matching (advanced BlaBla features)
+
+Mobile app (React Native / Expo)
