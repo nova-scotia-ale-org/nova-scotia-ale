@@ -21,7 +21,7 @@ const AppNavbar = () => {
             </div>
 
             {/* Main Navbar */}
-            <Navbar expand="lg" className="main-navbar">
+            <Navbar expand="lg" bg="dark" variant="dark" className="main-navbar">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <img
