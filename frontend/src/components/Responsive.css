@@ -1,0 +1,8 @@
+/* Footer css start*/
+@media (max-width: 1024px) {
+.footer_nav{
+    display: none;
+}
+}
+
+/* Footer css end */

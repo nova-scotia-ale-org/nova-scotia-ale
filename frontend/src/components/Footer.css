@@ -1,0 +1,112 @@
+.footer {
+  background: var(--color-secondary);
+  color: var(--color-accent);
+  padding: 60px 0;
+}
+
+.footer_title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footer_about_text {
+  font-size: 18px;
+  color: var(--color-accent);
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.footer_link {
+  color: var(--color-accent);
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.footer_link:hover {
+  color: var(--color-primary);
+}
+
+.footer_tags span {
+  display: inline-block;
+  border: 1px solid var(--color-primary);
+  padding: 6px 10px;
+  margin: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--color-accent);
+  transition: 0.3s;
+}
+
+.footer_tags span:hover {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* Social Icons */
+.footer_social_list i {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: var(--color-accent);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.footer_social_list i:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  box-shadow: 0 0 8px rgba(244, 196, 48, 0.6);
+}
+
+/* Contact */
+.contact_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--color-accent);
+}
+
+.contact_icon {
+  margin-right: 10px;
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+/* Bottom Bar */
+.copyright_bar {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight:500;
+}
+
+.footer_nav span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+.footer_column {
+  margin-bottom: 40px;
+}
+.footer_column:first-child .footer_title {
+  margin-top: 0;
+}
+.footer_social_list {
+  margin-top: 20px;
+}

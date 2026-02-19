@@ -1,6 +1,7 @@
 import './App.css';
 import AppNavbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         Explore Beers
       </button>
     </div>
+  <Footer />
     </>
   );
 }
