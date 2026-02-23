@@ -13,10 +13,8 @@
 }
 
 
-.main-navbar {
-    background-color: var(--color-secondary) !important;
-    padding: 18px 0;
-
+.main-navbar{
+    background:black;
 }
 
 .main-navbar .navbar-brand {
