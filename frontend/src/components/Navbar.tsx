@@ -11,7 +11,7 @@ const AppNavbar = () => {
             <div className="top-bar">
                 <Container className="d-flex justify-content-between">
                     <div className="contact-info">
-                        +45 345 3324 56789
+                        +1 902 123 4567
                     </div>
                     <div className="right-links">
                         <Link to="/login" className="nav-link-btn">

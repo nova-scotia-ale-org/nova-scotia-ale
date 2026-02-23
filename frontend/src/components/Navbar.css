@@ -69,7 +69,9 @@
 }
 
 .nav-link-btn:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: var(--color-accent);
+
 }
 
 /* Navbar css END */
