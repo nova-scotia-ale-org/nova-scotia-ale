@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 
                         {/* About Section */}
                         <div className="col-lg-3 footer_column">
-                            <h4 className="footer_title">NOVASCOTIAALE</h4>
+                            <h4 className="footer_title">Nova Scotia Ale</h4>
                             <p className="footer_about_text">
                                 NovaScotia Ale connects newcomers and locals to find housing,
                                 jobs, and rides. Stay updated with community tips and resources.
