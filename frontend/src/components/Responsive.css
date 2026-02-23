@@ -6,3 +6,34 @@
 }
 
 /* Footer css end */
+
+/* ========================= */
+/* AUTH RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .auth-right {
+    display: none;
+  }
+
+  .auth-wrapper {
+    width: 500px;
+  }
+
+  .auth-left {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-wrapper {
+    width: 95%;
+  }
+
+  .auth-left {
+    padding: 40px 25px;
+  }
+}
+
+/* END */

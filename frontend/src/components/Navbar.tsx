@@ -12,10 +12,14 @@ const AppNavbar = () => {
                 <Container className="d-flex justify-content-between">
                     <div className="contact-info">
                         +45 345 3324 56789
-                        </div>
+                    </div>
                     <div className="right-links">
-                        <span>Login</span>
-                        <span>Register</span>
+                        <Link to="/login" className="nav-link-btn">
+                            Login
+                        </Link>
+                        <Link to="/register" className="nav-link-btn">
+                            Register
+                        </Link>
                     </div>
                 </Container>
             </div>
