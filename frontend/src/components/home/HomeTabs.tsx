@@ -3,46 +3,58 @@ import AccommodationForm from "./AccommodationForm";
 import JobsForm from "./JobsForm";
 import RidesForm from "./RidesForm";
 import "./HomeTabs.css";
+import { useAuth } from "../../context/AuthContext";
 
 const HomeTabs = () => {
-    const [activeTab, setActiveTab] = useState("accommodation");
+  const { isAuthenticated } = useAuth(); // ✅ INSIDE component
 
-    return (
-        <section className="tabs-section">
-            <div className="tabs-wrapper">
+  const [activeTab, setActiveTab] = useState("accommodation");
 
-                <div className="tabs-header">
-                    <button
-                        className={activeTab === "accommodation" ? "active" : ""}
-                        onClick={() => setActiveTab("accommodation")}
-                    >
-                        ACCOMODATION
-                    </button>
+  return (
+    <section className="tabs-section">
+      <div className="tabs-wrapper">
 
-                    <button
-                        className={activeTab === "jobs" ? "active" : ""}
-                        onClick={() => setActiveTab("jobs")}
-                    >
-                        JOBS
-                    </button>
+        <div className="tabs-header">
+          <button
+            className={activeTab === "accommodation" ? "active" : ""}
+            onClick={() => setActiveTab("accommodation")}
+          >
+            ACCOMMODATION
+          </button>
 
-                    <button
-                        className={activeTab === "rides" ? "active" : ""}
-                        onClick={() => setActiveTab("rides")}
-                    >
-                        RIDES
-                    </button>
-                </div>
+          <button
+            className={activeTab === "jobs" ? "active" : ""}
+            onClick={() => setActiveTab("jobs")}
+          >
+            JOBS
+          </button>
 
-                <div key={activeTab} className="tabs-content fade-animate">
-                    {activeTab === "accommodation" && <AccommodationForm />}
-                    {activeTab === "jobs" && <JobsForm />}
-                    {activeTab === "rides" && <RidesForm />}
-                </div>
+          <button
+            className={activeTab === "rides" ? "active" : ""}
+            onClick={() => setActiveTab("rides")}
+          >
+            RIDES
+          </button>
+        </div>
 
+        <div key={activeTab} className="tabs-content fade-animate">
+          {!isAuthenticated ? (
+            <div className="login-warning">
+              <p>You must be logged in to post listings.</p>
+              <a href="/login" className="login-link">Login to Continue</a>
             </div>
-        </section>
-    );
+          ) : (
+            <>
+              {activeTab === "accommodation" && <AccommodationForm />}
+              {activeTab === "jobs" && <JobsForm />}
+              {activeTab === "rides" && <RidesForm />}
+            </>
+          )}
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default HomeTabs;
