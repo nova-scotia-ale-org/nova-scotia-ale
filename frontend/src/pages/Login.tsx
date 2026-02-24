@@ -4,6 +4,7 @@ import AuthLayout from "../components/auth/AuthLayout";
 import logo from "../assets/images/logo.png";
 import { login } from "../api/authApi";
 import { useAuth } from "../context/AuthContext";
+import GoogleLoginButton from "../components/auth/GoogleLoginButton";
 
 const Login = () => {
   const nav = useNavigate();
@@ -12,6 +13,10 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { login: loginToContext } = useAuth();
+  const handleGoogleLogin = () => {
+  console.log("Google login clicked");
+  // TODO: integrate Supabase OAuth later
+};
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -59,6 +64,14 @@ const Login = () => {
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>
+           {/* Divider */}
+          <div className="auth-divider">
+            <span>OR</span>
+          </div>
+
+          {/* Google Login Button */}
+          <GoogleLoginButton onClick={handleGoogleLogin} />
+
 
           <div className="auth-bottom">
             <span>Don't have an account?</span>
