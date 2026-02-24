@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export type User = {
   id: string;
@@ -9,44 +9,60 @@ export type User = {
 
 type AuthContextType = {
   user: User | null;
+  token: string | null;
   isAuthenticated: boolean;
   login: (user: User, token: string) => void;
   logout: () => void;
+  register: (user: User, token: string) => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
 
-
-  useEffect(() => {
+  // 🔥 Initialize BOTH user and token from localStorage
+  const [user, setUser] = useState<User | null>(() => {
     const storedUser = localStorage.getItem("nsale_user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+
+  const [token, setToken] = useState<string | null>(() => {
+    return localStorage.getItem("nsale_token");
+  });
 
   const login = (user: User, token: string) => {
-    localStorage.setItem("nsale_token", token);
     localStorage.setItem("nsale_user", JSON.stringify(user));
+    localStorage.setItem("nsale_token", token);
+
     setUser(user);
+    setToken(token);
+  };
+
+  const register = (user: User, token: string) => {
+    localStorage.setItem("nsale_user", JSON.stringify(user));
+    localStorage.setItem("nsale_token", token);
+
+    setUser(user);
+    setToken(token);
   };
 
   const logout = () => {
-    localStorage.removeItem("nsale_token");
     localStorage.removeItem("nsale_user");
+    localStorage.removeItem("nsale_token");
+
     setUser(null);
-    
+    setToken(null);
   };
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        isAuthenticated: !!user,
+        token,
+        isAuthenticated: !!user && !!token,
         login,
         logout,
+        register,
       }}
     >
       {children}
@@ -57,13 +73,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
 
-  // If no provider (like in tests), return safe fallback
   if (!context) {
     return {
       user: null,
+      token: null,
       isAuthenticated: false,
       login: () => {},
       logout: () => {},
+      register: () => {},
     };
   }
 
