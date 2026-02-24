@@ -5,10 +5,10 @@ import { Routes, Route } from "react-router-dom";
 
 import AppNavbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -16,10 +16,24 @@ function App() {
       <AppNavbar />
 
       <Routes>
+        {/* ✅ Public Home Page */}
         <Route path="/" element={<Home />} />
+
+        {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        
+
+        {/* 🔒 Example Protected Route (for future use) */}
+        {/* 
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        */}
       </Routes>
 
       <Footer />

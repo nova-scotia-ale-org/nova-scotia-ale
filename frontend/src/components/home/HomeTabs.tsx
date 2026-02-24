@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AccommodationForm from "./AccommodationForm";
 import JobsForm from "./JobsForm";
 import RidesForm from "./RidesForm";
@@ -6,8 +7,7 @@ import "./HomeTabs.css";
 import { useAuth } from "../../context/AuthContext";
 
 const HomeTabs = () => {
-  const { isAuthenticated } = useAuth(); // ✅ INSIDE component
-
+  const { isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState("accommodation");
 
   return (
@@ -41,7 +41,9 @@ const HomeTabs = () => {
           {!isAuthenticated ? (
             <div className="login-warning">
               <p>You must be logged in to post listings.</p>
-              <a href="/login" className="login-link">Login to Continue</a>
+              <Link to="/login" className="login-link">
+                Login to Continue
+              </Link>
             </div>
           ) : (
             <>
