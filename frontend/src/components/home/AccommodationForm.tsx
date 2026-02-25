@@ -1,35 +1,15 @@
-import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-
+import { useRequireAuthAction } from "../../hooks/useRequireAuthAction";
 
 const AccommodationForm = () => {
-  const { isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  const { requireAuth } = useRequireAuthAction();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isAuthenticated) {
-      await Swal.fire({
-        icon: "warning",
-        title: "Login Required",
-        text: "Please login to post accommodation.",
-        confirmButtonText: "Go to Login",
-        confirmButtonColor: "#FFD628",
-        background: "#000",
-        color: "#fff",
-      });
+    const ok = await requireAuth("Please login to post accommodation.");
+    if (!ok) return;
 
-      navigate("/login", {
-        state: { from: "/accommodation" },
-      });
-
-      return;
-    }
-
-    // 🔥 If logged in
-    console.log("Form submitted!");
+    console.log("Accommodation submitted!");
   };
 
   return (
@@ -40,6 +20,7 @@ const AccommodationForm = () => {
       <input placeholder="PRICE" type="number" required />
       <input type="file" />
       <input placeholder="CONTACT EMAIL" type="email" required />
+
       <button type="submit" className="post-btn">
         POST
       </button>
