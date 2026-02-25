@@ -3,6 +3,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { env } from "./config/env.js";
 import authRoutes from "./routes/auth.routes.js";
+import accommodationRoutes from "./routes/accommodation.routes.js";
+import jobsRoutes from "./routes/jobs.routes.js";
+import ridesRoutes from "./routes/rides.routes.js";
 
 dotenv.config();
 
@@ -17,6 +20,10 @@ app.use(express.json());
 app.get("/health", (_req, res) => {
   res.status(200).json({ status: "OK", message: "Backend is running 🚀" });
 });
+
+app.use("/api/accommodations", accommodationRoutes);
+app.use("/api/jobs", jobsRoutes);
+app.use("/api/rides", ridesRoutes);
 
 app.use("/api/auth", authRoutes);
 
