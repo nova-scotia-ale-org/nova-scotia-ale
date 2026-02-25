@@ -12,6 +12,7 @@ describe("App", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/Nova Scotia Ale/i)).toBeInTheDocument();
+    const elements = screen.getAllByText(/Nova Scotia Ale/i);
+    expect(elements.length).toBeGreaterThan(0);
   });
 });

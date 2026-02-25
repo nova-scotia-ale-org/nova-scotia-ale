@@ -40,10 +40,18 @@ const HomeTabs = () => {
         <div key={activeTab} className="tabs-content fade-animate">
           {!isAuthenticated ? (
             <div className="login-warning">
-              <p>You must be logged in to post listings.</p>
-              <Link to="/login" className="login-link">
-                Login to Continue
-              </Link>
+              <div className="login-warning-card">
+                <i className="fas fa-lock login-icon"></i>
+                <h4>Login Required</h4>
+                <p>
+                  Join Nova Scotia Ale to start posting
+                  accommodations, jobs, and rides.
+                </p>
+
+                <Link to="/login" className="login-btn">
+                  Login to Continue
+                </Link>
+              </div>
             </div>
           ) : (
             <>
