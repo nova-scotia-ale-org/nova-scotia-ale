@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import AccommodationForm from "./AccommodationForm";
 import JobsForm from "./JobsForm";
 import RidesForm from "./RidesForm";
 import "./HomeTabs.css";
-import { useAuth } from "../../context/AuthContext";
+
 
 const HomeTabs = () => {
-  const { isAuthenticated } = useAuth();
+
   const [activeTab, setActiveTab] = useState("accommodation");
 
   return (
@@ -38,28 +37,9 @@ const HomeTabs = () => {
         </div>
 
         <div key={activeTab} className="tabs-content fade-animate">
-          {!isAuthenticated ? (
-            <div className="login-warning">
-              <div className="login-warning-card">
-                <i className="fas fa-lock login-icon"></i>
-                <h4>Login Required</h4>
-                <p>
-                  Join Nova Scotia Ale to start posting
-                  accommodations, jobs, and rides.
-                </p>
-
-                <Link to="/login" className="login-btn">
-                  Login to Continue
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <>
-              {activeTab === "accommodation" && <AccommodationForm />}
-              {activeTab === "jobs" && <JobsForm />}
-              {activeTab === "rides" && <RidesForm />}
-            </>
-          )}
+          {activeTab === "accommodation" && <AccommodationForm />}
+          {activeTab === "jobs" && <JobsForm />}
+          {activeTab === "rides" && <RidesForm />}
         </div>
 
       </div>
