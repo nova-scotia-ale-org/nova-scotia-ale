@@ -75,3 +75,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* global swal css */
+.swal-cancel-custom {
+  background: transparent !important;
+  color: var(--color-accent) !important;
+  border: 2px solid var(--color-accent) !important;
+  border-radius: 8px !important;
+}
+
+.swal-cancel-custom:hover {
+  background: var(--color-accent) !important;
+  color: var(--color-secondary) !important;
+}
+/* global css end */
