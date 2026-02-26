@@ -3,35 +3,65 @@ import { useState } from "react";
 import AuthLayout from "../components/auth/AuthLayout";
 import logo from "../assets/images/logo.png";
 import { register } from "../api/authApi";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const nav = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
-    setLoading(true);
+
+    const styles = getComputedStyle(document.documentElement);
+    const primary = styles.getPropertyValue("--color-primary").trim();
+    const secondary = styles.getPropertyValue("--color-secondary").trim();
+    const accent = styles.getPropertyValue("--color-accent").trim();
+    const textDark = styles.getPropertyValue("--color-text-dark").trim();
+
+    // 🔄 Loader Modal
+    Swal.fire({
+      title: "Creating your account...",
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      background: accent,
+      color: textDark,
+    });
 
     try {
-      await register({ name, email, password });
+      const data = await register({ name, email, password });
 
-      alert("Successfully Registered ✅");
+      // 🟡 Success Modal (Brand Theme)
+      await Swal.fire({
+        icon: "success",
+        title: `Welcome ${name} 🎉`,
+        text: "Your Nova Scotia Ale journey begins now!",
+        confirmButtonText: "Go to Login",
+        confirmButtonColor: primary,
+        background: secondary,
+        color: accent,
+        iconColor: primary,
+      });
 
       nav("/login");
     } catch (err: any) {
       const backendError = err?.response?.data?.error;
 
-      if (typeof backendError === "string") {
-        setError(backendError);
-        return;
-      }
-
-      setError("Registration failed");
+      // ❌ Error Modal
+      await Swal.fire({
+        icon: "error",
+        title: "Registration Failed",
+        text: backendError || "Something went wrong",
+        confirmButtonText: "Try Again",
+        confirmButtonColor: primary,
+        background: accent,
+        color: textDark,
+        iconColor: secondary,
+      });
     }
   };
 
@@ -45,33 +75,54 @@ const Register = () => {
 
           <h2 className="auth-title">CREATE ACCOUNT</h2>
 
-          {error && <p style={{ color: "red" }}>{error}</p>}
-
           <form onSubmit={onSubmit}>
             <label>Full Name</label>
-            <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Full Name" className="auth-input" />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Full Name"
+              className="auth-input"
+            />
 
             <label>Email</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className="auth-input" />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email"
+              className="auth-input"
+            />
 
             <label>Password</label>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" className="auth-input" autoComplete="new-password" />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              className="auth-input"
+              autoComplete="new-password"
+            />
 
-            <button className="auth-button" type="submit" disabled={loading}>
-              {loading ? "Registering..." : "Register"}
+            <button className="auth-button" type="submit">
+              Register
             </button>
           </form>
 
           <div className="auth-bottom">
             <span>Already have an account?</span>
-            <Link to="/login" className="create-btn">Login</Link>
+            <Link to="/login" className="create-btn">
+              Login
+            </Link>
           </div>
         </>
       }
       rightContent={
         <>
           <h1 className="auth-heading">Join The Community</h1>
-          <p className="auth-description">Find rooms, jobs, and rides in one place.</p>
+          <p className="auth-description">
+            Find rooms, jobs, and rides in one place.
+          </p>
         </>
       }
     />

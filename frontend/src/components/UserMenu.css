@@ -1,0 +1,88 @@
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Name beside avatar */
+.user-display-name {
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+}
+
+/* Avatar circle */
+.avatar-circle {
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 2px solid var(--color-accent);
+}
+
+.avatar-circle:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown */
+.dropdown-menu-custom {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: var(--color-accent);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 240px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+}
+
+.user-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+}
+
+.user-email {
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: var(--color-text-dark);
+  opacity: 0.7;
+  word-break: break-word;
+}
+
+.dropdown-link {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.dropdown-link:hover {
+  color: var(--color-primary);
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
